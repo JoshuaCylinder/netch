@@ -34,6 +34,7 @@ public static class V2rayConfigUtils
                     new
                     {
                         domainMatcher = "mph",
+                        domainStrategy = "IPIfNonMatch",
                         type = "field",
                         domains = new []
                         {
