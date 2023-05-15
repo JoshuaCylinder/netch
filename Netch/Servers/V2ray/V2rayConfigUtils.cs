@@ -34,18 +34,23 @@ public static class V2rayConfigUtils
                     new
                     {
                         domainMatcher = "mph",
-                        domainStrategy = "IPIfNonMatch",
                         type = "field",
                         domains = new []
                         {
                             "geosite:cn"
                         },
+                        outboundTag = "direct"
+                    },
+                    new
+                    {
+                        domainMatcher = "mph",
+                        type = "field",
                         ip = new []
                         {
                             "geoip:cn"
                         },
                         outboundTag = "direct"
-                    }
+                    },
                 }
             }
         };
