@@ -8,7 +8,6 @@ public struct V2rayConfig
     public object[] inbounds { get; set; }
 
     public Outbound[] outbounds { get; set; }
-    
     public object[] routing { get; set; }
 }
 
