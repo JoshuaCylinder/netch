@@ -24,10 +24,40 @@ public static class V2rayConfigUtils
                         udp = true
                     }
                 }
+            },
+            routing = new object[]
+            {
+                new
+                {
+                    domainMatcher = "mpn",
+                    rules = new object[]
+                    {
+                        new
+                        {
+                            domainMatcher = "mph",
+                            type = "field",
+                            domains = new string[]
+                            {
+                                "geosite:cn"
+                            },
+                            ip = new string[]
+                            {
+                                "geoip:cn"
+                            },
+                            outboundTag = "direct"
+                        }
+                    }
+                }
             }
         };
-
-        v2rayConfig.outbounds = new[] { await outbound(server) };
+        var direct = new Outbound
+        {
+            settings = new OutboundConfiguration(),
+            mux = new Mux()
+        };
+        direct.protocol = "freedom";
+        direct.tag = "direct";
+        v2rayConfig.outbounds = new[] { await outbound(server), direct };
 
         return v2rayConfig;
     }

@@ -8,6 +8,8 @@ public struct V2rayConfig
     public object[] inbounds { get; set; }
 
     public Outbound[] outbounds { get; set; }
+    
+    public object[] routing { get; set; }
 }
 
 public class User
@@ -32,6 +34,8 @@ public class Outbound
     public StreamSettings? streamSettings { get; set; }
 
     public Mux? mux { get; set; }
+    
+    public string tag { get; set; }
 }
 
 public class OutboundConfiguration
