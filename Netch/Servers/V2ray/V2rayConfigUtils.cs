@@ -25,27 +25,25 @@ public static class V2rayConfigUtils
                     }
                 }
             },
-            routing = new object[]
+            routing = new
             {
-                new
+                
+                domainMatcher = "mph",
+                rules = new object[]
                 {
-                    domainMatcher = "mpn",
-                    rules = new object[]
+                    new
                     {
-                        new
+                        domainMatcher = "mph",
+                        type = "field",
+                        domains = new []
                         {
-                            domainMatcher = "mph",
-                            type = "field",
-                            domains = new string[]
-                            {
-                                "geosite:cn"
-                            },
-                            ip = new string[]
-                            {
-                                "geoip:cn"
-                            },
-                            outboundTag = "direct"
-                        }
+                            "geosite:cn"
+                        },
+                        ip = new []
+                        {
+                            "geoip:cn"
+                        },
+                        outboundTag = "direct"
                     }
                 }
             }
